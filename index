@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코끼리 엘리의 모험</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+        }
+        .book {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: white;
+            transition: transform 0.5s ease;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .page img {
+            max-width: 90%;
+            max-height: 60%;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .page p {
+            max-width: 80%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 10;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        #prevButton { left: 20px; }
+        #nextButton { right: 20px; }
+        h1 {
+            font-size: 24px;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page" id="page1">
+            <h1>코끼리 엘리의 모험</h1>
+            <img src="In_a_lush,_green_jungle,_a_young_elephant_named_El.png" alt="탐험의 시작">
+            <p>깊고 푸른 정글 속, 작은 코끼리 엘리는 새로운 세상을 탐험하기 시작했어요. 엘리의 눈은 호기심으로 반짝였고, 주변의 아름다운 자연에 감탄했답니다. 무성한 나무들과 화려한 꽃들 사이로, 엘리는 용기를 내어 한 걸음 한 걸음 나아갔어요.</p>
+        </div>
+        <div class="page" id="page2">
+            <h1>새로운 친구들</h1>
+            <img src="In_a_lush_jungle,_the_young_elephant_Ellie_meets_n.png" alt="친구들과의 만남">
+            <p>여행을 하던 중, 엘리는 신기한 친구들을 만났어요. 장난기 넘치는 원숭이 찰리, 아름다운 목소리의 새 루나, 그리고 지혜로운 거북이 쉘리였죠. 각자 다른 모습과 특별한 재능을 가진 친구들과 함께, 엘리의 모험은 더욱 즐거워졌답니다.</p>
+        </div>
+        <div class="page" id="page3">
+            <h1>신비한 폭포</h1>
+            <img src="Ellie_the_elephant_and_her_friends_discover_a_magi.png" alt="신비한 폭포">
+            <p>엘리와 친구들은 놀라운 광경을 마주했어요. 무지개 빛으로 빛나는 신비한 폭포였죠! 폭포 주변에는 형형색색의 꽃들이 피어 있었고, 폭포수는 마법처럼 반짝였어요. 모두가 경이로움에 빠져 이 아름다운 광경을 바라보았답니다.</p>
+        </div>
+        <div class="page" id="page4">
+            <h1>마법의 열매</h1>
+            <img src="Ellie_the_elephant_finds_a_glowing_magical_fruit_a.png" alt="마법의 열매">
+            <p>폭포 근처에서 엘리는 신기한 것을 발견했어요. 반짝이는 마법의 열매였죠! 엘리는 망설임 없이 친구들과 나누기로 했어요. 모두가 열매를 한 입 베어 물자, 가슴 속에서 따뜻한 기운이 퍼져나갔어요. 그리고 각자의 소원을 마음속으로 빌었답니다.</p>
+        </div>
+        <div class="page" id="page5">
+            <h1>용기의 시험</h1>
+            <img src="Ellie_the_elephant_and_her_friends_face_a_dangerou.png" alt="용기의 시험">
+            <p>갑자기 큰 바위가 굴러오기 시작했어요! 엘리와 친구들은 위험에 처했지만, 서로를 도우며 용기를 냈어요. 엘리는 큰 귀로 바람을 일으켜 바위의 속도를 늦추고, 친구들은 재빠르게 안전한 곳으로 피했답니다. 함께하면 어떤 위험도 이겨낼 수 있다는 걸 배웠어요.</p>
+        </div>
+        <div class="page" id="page6">
+            <h1>험난한 여정</h1>
+            <img src="Ellie_the_elephant_and_her_friends_are_in_a_danger.png" alt="모험의 위험">
+            <p>엘리와 친구들은 험난한 산길을 지나게 되었어요. 위험한 동물들의 그림자가 보이기도 했죠. 하지만 모두가 협력했어요. 찰리는 높은 나무에 올라가 안전한 길을 찾았고, 루나는 하늘에서 위험을 감지했어요. 쉘리는 경험을 바탕으로 현명한 조언을 해주었답니다.</p>
+        </div>
+        <div class="page" id="page7">
+            <h1>평화로운 호수</h1>
+            <img src="Ellie_the_elephant_and_her_friends_arrive_at_a_bea.png" alt="아름다운 호수">
+            <p>긴 여정 끝에 엘리와 친구들은 아름다운 호수에 도착했어요. 맑고 푸른 물에는 화려한 물고기들이 헤엄치고 있었죠. 모두는 잠시 쉬어가기로 했어요. 호수 주변의 평화로운 분위기 속에서, 지금까지의 모험을 되새기며 행복한 미소를 지었답니다.</p>
+        </div>
+        <button class="nav-button" id="prevButton">이전</button>
+        <button class="nav-button" id="nextButton">다음</button>
+    </div>
+    <script>
+        const book = document.querySelector('.book');
+        const pages = document.querySelectorAll('.page');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        let currentPage = 0;
+
+        function updatePage() {
+            pages.forEach((page, index) => {
+                page.style.transform = `translateX(${100 * (index - currentPage)}%)`;
+            });
+            prevButton.style.display = currentPage === 0 ? 'none' : 'block';
+            nextButton.style.display = currentPage === pages.length - 1 ? 'none' : 'block';
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                updatePage();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                updatePage();
+            }
+        });
+
+        updatePage();
+    </script>
+</body>
+</html>
